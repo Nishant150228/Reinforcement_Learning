@@ -1,0 +1,28 @@
+Overview
+This repository contains the implementation of two Markov Decision Process (MDP) scenarios as part of LAB-01 for Reinforcement Learning. These scenarios illustrate the application of MDPs to solve decision-making problems in uncertain environments:
+
+Self-Driving Car at an Intersection
+Robot Navigation in a Grid World
+Both scenarios are implemented in Python using OpenAI Gym. The solutions include problem formalization, policy definition, implementation, and result interpretation.
+
+Project Structure
+Introduction: Overview of Reinforcement Learning and MDP concepts.
+Scenario 1: Self-Driving Car at an Intersection
+Problem definition
+MDP components (States, Actions, Transition Probabilities, Rewards, Discount Factor)
+Policy definition
+Code implementation using OpenAI Gym
+Simulation results and interpretation
+Validation through multiple episodes
+Scenario 2: Robot Navigation in a Grid World
+Problem definition
+MDP components (States, Actions, Transition Probabilities, Rewards, Discount Factor)
+Policy definition
+Code implementation using OpenAI Gym
+Simulation results and interpretation
+Validation through multiple episodes
+Conclusion: Summary of findings and potential for future work.
+Requirements
+Python 3.8 or above
+OpenAI Gym
+Numpy
