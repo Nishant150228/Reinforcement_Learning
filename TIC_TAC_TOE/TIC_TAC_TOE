@@ -1,0 +1,142 @@
+This project implements a Tic Tac Toe game with a graphical user interface (GUI) built using Python's turtle module. The game integrates reinforcement learning techniques, utilizing policies derived from value iteration and policy iteration algorithms.
+
+Features
+
+Interactive GUI:
+
+The game board is drawn dynamically using the turtle module.
+
+Players can click on the board to make moves.
+
+Reinforcement Learning Integration:
+
+Two types of agents:
+
+PolicyIteration: Uses a policy derived from policy iteration.
+
+ValueIteration: Uses a policy derived from value iteration.
+
+The policies are stored in JSON files (policy1.json and policy2.json).
+
+Play Modes:
+
+Human vs Computer (AI).
+
+Automated Moves:
+
+The computer selects moves based on the loaded policy.
+
+Dynamic Gameplay:
+
+Detects wins, ties, and restarts the game upon completion.
+
+File Structure
+
+Tic_tac_Toe_GUI.ipynb: Jupyter Notebook for the Tic Tac Toe implementation.
+
+policy1.json: Policy derived from policy iteration.
+
+policy2.json: Policy derived from value iteration.
+
+MDP.ipynb: Notebook for Markov Decision Process implementation.
+
+policy_iteration.ipynb: Notebook for policy iteration algorithm.
+
+value_iteration.ipynb: Notebook for value iteration algorithm.
+
+Requirements
+
+Python 3.7+
+
+Required Libraries:
+
+turtle
+
+json
+
+How to Run
+
+Clone or download the repository.
+
+Ensure the required JSON files (policy1.json and policy2.json) are in the same directory as the Python script.
+
+Run the script:
+
+python Tic_tac_Toe_GUI.py
+
+Click on the board to play as Player X against the computer.
+
+Gameplay Instructions
+
+Starting the Game:
+
+The game starts with Player X (human).
+
+Click on an empty spot on the board to make your move.
+
+Computer's Turn:
+
+The computer (Player O) will make its move based on the loaded policy.
+
+Winning or Tying:
+
+The game ends if a player achieves three in a row (horizontal, vertical, or diagonal).
+
+If all spots are filled without a winner, the game declares a tie.
+
+Restarting:
+
+The game board resets automatically after a win or tie.
+
+Code Explanation
+
+TicTacToeGUI Class
+
+Attributes:
+
+current_player: Tracks the current player ("X" or "O").
+
+board: Represents the game board as a list of integers.
+
+policy: Loads the policy from a JSON file.
+
+is_vs_computer: Boolean to indicate human vs AI mode.
+
+Methods:
+
+draw_rectangle: Draws the game board.
+
+draw_circle: Draws a circle to represent Player O's move.
+
+draw_X: Draws an X to represent Player X's move.
+
+make_computer_move: Determines the computer's next move based on the policy.
+
+check_win: Checks for a winning condition.
+
+check_tie: Checks for a tie condition.
+
+play: Handles the player's move and updates the board.
+
+restart_game: Resets the game after a win or tie.
+
+Future Enhancements
+
+Add a human vs human mode.
+
+Improve the visual design of the GUI.
+
+Incorporate a difficulty setting for the AI.
+
+Add sound effects for a more engaging experience.
+
+Acknowledgments
+
+Reinforcement learning policies were generated using algorithms implemented in policy_iteration.ipynb and value_iteration.ipynb.
+
+GUI inspired by the flexibility of Python's turtle module.
+
+License
+
+This project is licensed under the MIT License. Feel free to use and modify the code as needed.
+
