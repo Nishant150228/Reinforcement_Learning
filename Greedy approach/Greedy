@@ -1,1 +1,80 @@
+1. Warehouse Navigation Simulation
+Purpose:
+Simulates a robot navigating a 2D grid warehouse to collect items scattered across predefined locations. The robot must use a greedy policy to navigate and pick up items efficiently.
+
+Components:
+WarehouseEnv Class:
+Attributes:
+grid_size: Size of the warehouse grid (default 10x10).
+robot_pos: Robot's current position in the grid (initially at [0, 0]).
+items: Locations of items to be picked up.
+Methods:
+reset: Resets the robot to the starting position and reinitializes items.
+step: Moves the robot based on the action (0 = up, 1 = down, 2 = left, 3 = right). Rewards are:
+-0.1 for every step to discourage unnecessary movement.
+1 for picking up an item.
+10 when all items are collected (task complete).
+Marks the environment as done when all items are picked up.
+render: Displays the warehouse grid in the console.
+Greedy Policy:
+Uses Euclidean distance to identify the closest item and selects an action to reduce the distance.
+Execution:
+The robot moves step-by-step, guided by the greedy policy, picking up items and earning rewards. The grid is displayed after each step, with:
+1 representing the robot.
+2 representing items.
+0 representing empty spaces.
+2. Stock Trading Simulation
+Purpose:
+Models a stock trading environment where an agent decides to hold, buy, or sell stocks based on simulated stock prices.
+
+Components:
+StockTradingEnv Class:
+Attributes:
+data: Array of stock prices.
+current_step: Tracks the current time step.
+balance: The agent's cash reserve.
+position: Number of stocks held.
+net_worth: Current value of balance and stocks combined.
+max_steps: Total simulation length.
+Methods:
+reset: Resets the environment, initializes the balance, position, and net worth.
+_next_observation: Retrieves the stock price and net worth for the current step.
+step: Executes an action (0 = hold, 1 = buy, 2 = sell). Updates balance and position based on:
+Buying: Buys as many stocks as possible with the available balance.
+Selling: Sells all held stocks.
+render: Displays the step, balance, position, and net worth.
+Rewards:
+Calculated as the change in net worth compared to the initial balance.
+Random Policy:
+Actions (buy, sell, hold) are selected randomly, showcasing the environment's behavior without a strategic policy.
+3. Using OpenAI Gym
+WarehouseEnv (Gym Integration):
+The second implementation adapts the warehouse simulation to the OpenAI Gym framework, making it compatible with Gym-based reinforcement learning algorithms.
+Adds standardized action_space and observation_space to comply with Gym conventions.
+StockTradingEnv (Gym Integration):
+Implements the trading environment in Gym format with structured action_space and observation_space.
+Interactive Widgets:
+IPython Widgets:
+Adds buttons to start either the warehouse or stock trading simulation.
+Allows interactive exploration of the two simulations in a Jupyter Notebook.
+Execution Flow:
+Warehouse Simulation:
+
+Greedy policy drives the robot to pick up items sequentially.
+The grid visually updates after each action, showing the robot's progress.
+Stock Trading Simulation:
+
+Random actions are used to simulate trading decisions.
+Displays the balance, stocks held, and net worth after each step.
+Gym-Compatible Environments:
+
+The last part prepares both simulations to be used with RL algorithms compatible with Gym.
+These codes are educational simulations showcasing dynamic decision-making in distinct scenarios: navigating a warehouse and trading stocks. They can be extended with advanced RL strategies for more sophisticated behavior.
+
+
+
+
+
+
+
 
